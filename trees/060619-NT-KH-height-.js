@@ -84,24 +84,23 @@ class BTNode {
     }
 
     height() {
-        let leftDepth = 0;
-        let rightDepth = 0;
+        const left = this.left ? this.left.height() : 0;
+        // let leftDepth = 0;
+        // let rightDepth = 0;
 
-        if (this.left != null) {
-            leftDepth = this.left.height();
-            
-            console.log("leftDepth is:  " + leftDepth);
-        }
-        if (this.right != null) {
-            rightDepth = this.right.height();
-            console.log("rightDepth:  " + rightDepth);
-        }
-        if (leftDepth > rightDepth) {
-            return leftDepth + 1
-        }
-        else {
-            return rightDepth + 1;
-        }
+        // if (this.left != null) {
+        //     leftDepth = this.left.height();
+        //     console.log("leftDepth is:  " + leftDepth);
+        // }
+
+        const right = this.right ? this.right.height() : 0;
+        // if (this.right != null) {
+        //     rightDepth = this.right.height();
+        //     console.log("rightDepth:  " + rightDepth);
+        // }
+        // boolean ? true : false;
+        return (left > right ? left : right) + 1;
+
 
 
 
