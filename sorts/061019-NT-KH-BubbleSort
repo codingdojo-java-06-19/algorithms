@@ -1,0 +1,45 @@
+// Array: Bubble Sort
+
+// For review, create a function that uses BubbleSort to sort an unsorted array in-place.
+
+let sampleArray = [5, 7, 4, 2, 8, -22, 1];
+// i=1    1 5 4 2 8
+// i=2  1 4 5 2 8
+// i =3  1 4 2 5 8
+// i=4 1 4 2 5 8
+
+
+function bubbleSort(inArray) {
+    // check each of two position and swap if second is smaller
+    let count = 0;
+    let isSwapped = false;
+    let j = 1;
+    while (!isSwapped) {
+        isSwapped = false;
+        for (let i = 1; i < inArray.length-j+1; i++) {
+            if (inArray[i - 1] > inArray[i]) {
+                isSwapped = true
+                console.log("don't be here if already sorted");
+                let temp = inArray[i];
+                inArray[i] = inArray[i - 1];
+                inArray[i - 1] = temp;
+            }
+            count++;
+            console.log("we have inner looped through this many time " + i)
+            console.log("count is  " + count);
+        }
+        j++;
+        console.log("we have looped through this many time " + j)
+        console.log("the array is " + inArray);
+
+    } // end while
+    return inArray;
+} 
+
+
+result = bubbleSort(sampleArray);
+// result = bubbleSort([1,2,3,4,5]);
+ result = bubbleSort([2,0,3,4,5]);
+console.log(result);
+
+//   for (let j = 1; j < inArray.length; j++) 
