@@ -16,14 +16,18 @@ function mergeSortArr(inArray1) {
     //continue until all resulting arrays have only one element
     //if two, sort them...if one, then do nothing...when finished use mergeSort from yesterday
     //for recursion base case is when length of any/all arrays is less than 2
-    if (inArray1.length < 2) {
+    if (inArray1.length <=1) {
         return inArray1;
     }
     let midPoint = Math.floor(inArray1.length/2)
     //split some arrays
     //newArray1 = 0 to midPOint; newArray2 = midPoint1 to inArray1.length
+    const leftArr = inArray1.slice(0, midPoint);
+    const rightArr = inArray1.slice(midPoint);
+    console.log("leftArray is" + leftArr);
+    console.log("rightArray is " + rightArr);
 
-
+    return combineArrs(mergeSortArr(leftArr), mergeSortArr(rightArr));
 
 }
 
