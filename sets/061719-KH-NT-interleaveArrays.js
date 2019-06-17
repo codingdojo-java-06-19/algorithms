@@ -5,7 +5,7 @@
 
 const sample1 = [77, 22, 11, 22];
     
-const sample2 = [2,  6,  7,  2,  6,  2];
+const sample2 = [2,  6,  7,  2,  8,  2, 99, 202];
 
 function interleaveArrays(inArray1, inArray2) {
 
@@ -17,10 +17,16 @@ function interleaveArrays(inArray1, inArray2) {
         //alternate pushes i
         newArray.push(inArray1[i], inArray2[i]);
         i++
-        console.log(newArray);
     } // end while checking for end of arrays
     //put remainder of longer array in
+    //console.log(newArray);
+    //console.log(shorterArray.length);
+    //console.log(longerArray);
+    //console.log(longerArray[4]);
+
     for (let i = shorterArray.length; i < longerArray.length; i++) {
+        // console.log("should be 4 the first time" +i);
+        // console.log(longerArray[i])
         newArray.push(longerArray[i]);
     }
     return newArray;
@@ -29,4 +35,5 @@ function interleaveArrays(inArray1, inArray2) {
 } // end interleaveArrays
 
 result = interleaveArrays(sample1, sample2);
+console.log(result);
 
